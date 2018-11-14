@@ -56,5 +56,5 @@ Note: The last line of the username dictionary password dictionary is blank, tha
 						
 Based on: https://github.com/worawit/MS17-010
 
-## Credit to zzwlpx
+## Credit to zzwlpx (~_^)
 

